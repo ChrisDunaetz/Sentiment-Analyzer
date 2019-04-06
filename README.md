@@ -9,6 +9,7 @@ git clone https://github.com/ChrisDunaetz/Sentiment-Analyzer.git
 
 ### 2. Build the Docker image
 ```
+cd Sentiment-Analyzer
 docker build -t image1 .
 ```
 
