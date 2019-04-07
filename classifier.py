@@ -10,6 +10,7 @@ import pandas as pd
 import os 
 
 dir_path=os.path.dirname(os.path.abspath(__file__))
+reviews_path = dir_path+r'/resources/Amazon reviews'
 
 def createdf(path,sentiment):        
   
@@ -36,9 +37,9 @@ def createdf(path,sentiment):
   
     return titles,truth
 
-filenames=[dir_path+r'/books/negative.review',dir_path+ r'/books/positive.review',dir_path+r'/dvd/negative.review',
-          dir_path+r'/dvd/positive.review',dir_path+r'/electronics/negative.review',dir_path+r'/electronics/positive.review',
-          dir_path+r'/kitchen_&_housewares/negative.review',dir_path+r'/kitchen_&_housewares/positive.review']
+filenames=[reviews_path+r'/books/negative.review',reviews_path+ r'/books/positive.review',reviews_path+r'/dvd/negative.review',
+          reviews_path+r'/dvd/positive.review',reviews_path+r'/electronics/negative.review',reviews_path+r'/electronics/positive.review',
+          reviews_path+r'/kitchen_&_housewares/negative.review',reviews_path+r'/kitchen_&_housewares/positive.review']
 
 text=[]
 truth=[]
@@ -55,7 +56,7 @@ len(text)
 
 
 titles=[]
-with open(dir_path+r'/books/negative.review') as fp:
+with open(reviews_path+r'/books/negative.review') as fp:
     #lines= [line.strip() for line in fp]
     for i, line in enumerate(fp):
         if '<title>' in line:
@@ -64,7 +65,7 @@ with open(dir_path+r'/books/negative.review') as fp:
 titles
             
 body=[]
-with open(dir_path) as fp:
+with open(reviews_path) as fp:
     lines=[line.strip() for line in fp]
     for i, line in enumerate(fp):
         if '<review_text>' in line:
