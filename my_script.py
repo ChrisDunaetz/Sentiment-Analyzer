@@ -7,5 +7,4 @@ def scoresForString(sentence):
   return "{:-<60} {}".format(sentence, str(scores))
 
   
-print(scoresForString("those people don't understand me, it makes me feel like something is wrong with me"))
-print(scoresForString("I really like Elaina, she's amazing!"))
+print(scoresForString("I like cats, they're the best."))
